@@ -5,14 +5,15 @@
 This is a simple **AI-powered chatbot** built using **Flask** and **Sentence Transformers**. It retrieves the most relevant answer based on user input using **semantic search**.
 
 ---
-![Screenshot from 2025-02-02 17-39-25](https://github.com/user-attachments/assets/c1052447-02b5-494c-a52a-1f70a9fbc5af)
-
 ### **Screenshot**
 
 
+![Screenshot from 2025-02-02 17-39-25](https://github.com/user-attachments/assets/c1052447-02b5-494c-a52a-1f70a9fbc5af)
 
 
----
+
+---[Screencast from 2025-02-02 17-36-19.webm](https://github.com/user-attachments/assets/4757d822-96c6-48fa-a557-d817890f099e)
+
 
 ### **🔹 Features**  
 ✅ **Retrieval-Based AI** – Finds the best answer from a predefined Q&A dataset.  
