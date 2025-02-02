@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        input {
+            width: 60%;
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #answer {
+            margin-top: 20px;
+            font-size: 18px;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>AI Chatbot</h1>
+    <input type="text" id="question" placeholder="Ask a question..." />
+    <button onclick="askQuestion()">Ask</button>
+    <p id="answer"></p>
+
+    <script>
+        async function askQuestion() {
+            const question = document.getElementById("question").value;
+            if (!question) {
+                alert("Please enter a question!");
+                return;
+            }
+
+            document.getElementById("answer").innerText = "Thinking...";
+
+            try {
+                const response = await fetch("http://127.0.0.1:5000/ask", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ question: question })
+                });
+
+                const data = await response.json();
+                document.getElementById("answer").innerText = "AI: " + data.answer;
+            } catch (error) {
+                document.getElementById("answer").innerText = "Error getting response.";
+                console.error("Error:", error);
+            }
+        }
+    </script>
+</body>
+</html>
